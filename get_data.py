@@ -8,7 +8,7 @@ import os
 
 
 # Secrets
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+GH_TOKEN = os.getenv('GH_TOKEN')
 CONSUMER_KEY = os.getenv('CONSUMER_KEY')
 CONSUMER_SECRET = os.getenv('CONSUMER_SECRET')
 ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
@@ -49,7 +49,7 @@ query($userName:String!) {
 }
 '''
 
-variables, headers = { 'userName' : GITHUB_USERNAME }, {'Authorization': 'Bearer ' + GITHUB_TOKEN}
+variables, headers = { 'userName' : GITHUB_USERNAME }, {'Authorization': 'Bearer ' + GH_TOKEN}
 response = requests.post( 'https://api.github.com/graphql', json={'query': contributions_query, 'variables': variables}, headers=headers)
 
 if response.status_code == 200:
