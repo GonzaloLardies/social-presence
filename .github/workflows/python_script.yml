@@ -1,4 +1,4 @@
-name: Ejecutar Script Python
+name: Run Python Script
 
 on:
   schedule:
