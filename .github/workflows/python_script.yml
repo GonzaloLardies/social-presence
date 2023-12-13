@@ -24,4 +24,10 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run script
+      env: # use secrets
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SCRET }}
       run: python get_data.py 
